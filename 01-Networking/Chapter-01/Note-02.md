@@ -1,168 +1,131 @@
-# Computer Networks
+### **Review Questions:**
 
-A computer network is a set of nodes connected by communication links.
-**Nodes**: computer, camera
-**Links**: wired link, wireless link
-**End Devices**: PC, Printer, Server
-**Intermediary Devices**: Router, Modem, internet cloud
+1. **Identify the five components of a data communications system.**
 
-## Characteristics of Computer Networks
+   - **Message** (data being transmitted)
+   - **Sender** (device sending the data)
+   - **Receiver** (device receiving the data)
+   - **Medium** (channel for data transmission)
+   - **Protocol** (rules governing communication)
 
-1. **Fault Tolerance**
+2. **What are the advantages of distributed processing?**
 
-   - **Definition**: The ability of a network to continue functioning even when some components fail.
-   - **Example**: In a distributed system, if one server crashes, data can still be accessed from a backup server or replicated nodes.
-   - **Implementation**: Techniques like data redundancy, failover systems, and error detection/correction.
+   - Better resource sharing
+   - Higher reliability (fault tolerance)
+   - Scalability and flexibility
+   - Faster processing via parallelism
 
-2. **Scalability**
+3. **What are the three criteria necessary for an effective and efficient network?**
 
-   - **Definition**: The capacity of a network to grow (add more devices, users, or resources) without losing performance.
-   - **Example**: A cloud service expanding its resources during peak hours to handle increased traffic.
-   - **Implementation**: Using technologies like load balancers and distributed architectures.
+   - **Performance** (measured by speed, response time)
+   - **Reliability** (ability to recover from failures)
+   - **Security** (protection against unauthorized access)
 
-3. **Quality of Service (QoS)**
+4. **What are the advantages of a multipoint connection over a point-to-point connection?**
 
-   - **Definition**: The ability to prioritize certain types of traffic to ensure performance standards, like bandwidth, latency, and reliability.
-   - **Example**: Video conferencing applications like Zoom prioritizing video packets over email traffic to avoid lag.
-   - **Implementation**: Protocols like DiffServ and MPLS help manage and allocate resources efficiently.
+   - More cost-effective (fewer cables and ports required)
+   - Easier to add new devices
+   - Efficient use of bandwidth
 
-4. **Security**
-   - **Definition**: Protecting data and network resources from unauthorized access, attacks, or breaches.
-   - **Example**: E-commerce websites use HTTPS for encrypted communication to protect users' payment data.
-   - **Implementation**: Firewalls, encryption protocols (SSL/TLS), and multi-factor authentication.
+5. **What are the two types of line configuration?**
 
-## Data Communication Concepts
+   - **Point-to-Point:** Dedicated link between two devices
+   - **Multipoint:** Shared link among multiple devices
 
-1. **What is Data Communication?**
+6. **Categorize the four basic topologies in terms of line configuration.**
 
-   - **Definition**: The exchange of data between devices through a transmission medium (e.g., cable, wireless).
-   - **Example**: Sending an email involves transferring text data from your computer to the recipient's device via servers and the internet.
-   - **Key Components**: Sender, receiver, message, transmission medium, protocol.
+   - **Mesh & Star:** Point-to-point connections
+   - **Bus & Ring:** Multipoint connections
 
-2. **Understand Data Flow**
+7. **What is the difference between half-duplex and full-duplex transmission modes?**
 
-   - **Definition**: Refers to how data moves between devices in a network.
-   - **Types**:
-     - **Simplex**: Data flows in one direction (e.g., keyboard to computer).
-     - **Half-duplex**: Data flows in both directions, but only one at a time (e.g., walkie-talkies).
-     - **Full-duplex**: Data flows simultaneously in both directions (e.g., phone calls).
+   - **Half-duplex:** Data flows in both directions, but one at a time (e.g., walkie-talkie).
+   - **Full-duplex:** Data flows in both directions simultaneously (e.g., telephone).
 
-3. **Understanding the Importance of Protocol**
+8. **Name the four basic network topologies, and cite an advantage of each type.**
 
-   - **Definition**: A protocol is a set of rules governing data communication, ensuring successful and reliable data transfer.
-   - **Importance**:
-     - Ensures devices understand each other (e.g., browser and server using HTTP).
-     - Handles errors, data format, and timing issues.
-     - Example: TCP/IP ensures reliable communication over the internet.
+   - **Mesh:** High redundancy, reliable.
+   - **Star:** Easy troubleshooting, failure of one device doesn’t affect others.
+   - **Bus:** Easy to set up, cost-effective.
+   - **Ring:** Efficient data transmission, no data collisions.
 
-4. **Know the Elements of Protocol**
-   - **Definition**: Protocol elements are the key aspects that define how communication occurs.
-   - **Elements**:
-     - **Message Encoding**: Converts data into a form suitable for transmission (e.g., text into binary).
-       - **Example**: UTF-8 encoding for text in emails.
-     - **Formatting & Encapsulation**: Organizes data into structured formats and packages it for transmission.
-       - **Example**: HTTP headers and body encapsulated in a TCP packet.
-     - **Timing**: Synchronization of data transfer speed, sequence, and response times.
-       - **Example**: Video conferencing requires synchronized audio and video streams.
-     - **Size**: Defines how much data can be transmitted in a single communication unit.
-       - **Example**: Ethernet frames limit data to 1500 bytes per frame.
-     - **Delivery Options**: Specifies how and to whom data is delivered, such as unicast (single receiver), multicast (multiple receivers), or broadcast (all devices).
-       - **Example**: A router sending updates to specific devices via unicast.
+9. **For \( n \) devices in a network, what is the number of cable links required for mesh, ring, bus, and star topology?**
 
-## Components of a Computer Network
+   - **Mesh:** \( n(n-1)/2 \)
+   - **Ring:** \( n \)
+   - **Bus:** 1 backbone cable
+   - **Star:** \( n \) (each device connects to the central hub)
 
-1. **Nodes**
+10. **What are some factors that determine whether a communication system is a LAN or WAN?**
 
-   - **Definition**: Devices connected to the network that can send, receive, or process data.
-   - **Examples**:
-     - Computers (PCs, laptops, servers) for processing and sharing data.
-     - Printers for receiving data to print.
-     - IoT devices like smart home sensors.
+    - **Geographical scope** (LAN is within a building, WAN spans regions)
+    - **Data transfer speed** (LANs are faster)
+    - **Ownership** (LANs are privately owned, WANs may be public)
 
-2. **Different Media**
+11. **What is an internet? What is the Internet?**
 
-   - **Definition**: The transmission medium through which data is transferred.
-   - **Types**:
-     - **Wired Media**: Physical cables like Ethernet cables or fiber optics for high-speed connections.
-       - Example: LAN setup in offices using Ethernet cables.
-     - **Wireless Media**: Uses electromagnetic waves (Wi-Fi, Bluetooth, cellular networks).
-       - Example: Mobile phones connected via Wi-Fi to the internet.
+    - **internet:** A general term for interconnected networks.
+    - **Internet:** The global network using TCP/IP.
 
-3. **Services Offered by Computer Networks**
-   - **Definition**: Functions and resources provided by networks to users.
-   - **Examples**:
-     - **File Sharing**: Accessing shared documents on a network drive.
-     - **Internet Access**: Browsing the web via a shared router.
-     - **Communication**: Sending emails or using messaging apps like WhatsApp.
-     - **Remote Access**: Connecting to a work computer via VPN.
+12. **Why are protocols needed?**
 
-## Classification of Computer Networks
+    - Ensure devices communicate efficiently and correctly.
 
-1. **LAN (Local Area Network)**
+13. **Why are standards needed?**
+    - Ensure interoperability between different manufacturers.
 
-   - **Definition**: Covers a small geographical area, such as a single building or campus.
-   - **Devices Involved**:
-     - Computers, switches, routers, access points, and printers.
-   - **Example**: Office network connecting employee PCs to printers and file servers.
+---
 
-2. **MAN (Metropolitan Area Network)**
+### **Exercises:**
 
-   - **Definition**: Spans a city or a large campus, connecting multiple LANs.
-   - **Devices Involved**:
-     - Routers, switches, fiber-optic cables, and microwave antennas.
-   - **Example**: A university’s network linking multiple campus buildings.
+14. **What is the maximum number of characters or symbols that can be represented by Unicode?**
 
-3. **WAN (Wide Area Network)**
-   - **Definition**: Covers a large geographical area, connecting multiple MANs or LANs.
-   - **Devices Involved**:
-     - Routers, satellites, leased lines, and public infrastructure (e.g., internet).
-   - **Example**: The internet or a multinational corporation's private network.
+    - **1,114,112 characters** (2¹⁶ + 2²⁰ = 1,114,112).
 
-### New Trends in Computer Networks
+15. **A color image uses 16 bits to represent a pixel. What is the maximum number of different colors that can be represented?**
 
-1. **5G Networks**: High-speed, low-latency wireless communication for mobile devices and IoT.
-2. **Software-Defined Networking (SDN)**: Centralized network control using software rather than hardware.
-3. **Cloud Networking**: Virtual networks hosted in cloud environments for scalability and efficiency.
-4. **IoT Integration**: Connecting smart devices like wearables and home automation systems.
-5. **AI in Networking**: Using AI to optimize network performance and detect security threats.
+    - **65,536 colors** (\( 2^{16} \)).
 
-## Network Topologies
+16. **Assume six devices are arranged in a mesh topology. How many cables are needed? How many ports are needed for each device?**
 
-1. **Bus Topology**
+    - **Cables needed:** \( 6(6-1)/2 = 15 \)
+    - **Ports per device:** \( 6-1 = 5 \)
 
-   - **Definition**: All devices are connected to a single central cable (the "bus").
-   - **Advantages**:
-     - Simple to set up and cost-effective for small networks.
-     - Requires minimal cable length.
-   - **Disadvantages**:
-     - A single cable failure disrupts the entire network.
-     - Limited scalability and performance degradation with more devices.
+17. **For each of the following networks, discuss the consequences if a connection fails.**  
+    a. **Mesh topology:** No major impact due to redundancy.  
+    b. **Star topology:** Only affected device loses connection.  
+    c. **Bus topology:** Whole network fails if backbone is damaged.  
+    d. **Ring topology:** Network may fail unless there’s redundancy.
 
-2. **Star Topology**
+18. **You have two computers connected by an Ethernet hub at home. Is this a LAN, a MAN, or a WAN? Explain.**
 
-   - **Definition**: All devices are connected to a central hub or switch.
-   - **Advantages**:
-     - Easy to add/remove devices without affecting the network.
-     - Failure of a single device does not disrupt the network.
-   - **Disadvantages**:
-     - Failure of the central hub disrupts the entire network.
-     - More cabling required compared to bus topology.
+    - **LAN** (Local Area Network) because it covers a small area.
 
-3. **Mesh Topology**
+19. **In the ring topology, what happens if one of the stations is unplugged?**
 
-   - **Definition**: Each device is connected to every other device.
-   - **Advantages**:
-     - High reliability and fault tolerance; no single point of failure.
-     - Data can take multiple paths, improving performance.
-   - **Disadvantages**:
-     - Expensive and complex to set up due to extensive cabling.
-     - Difficult to manage and maintain.
+    - **Breaks the loop, disrupting communication** unless there’s redundancy.
 
-4. **Hybrid Topology**
-   - **Definition**: A combination of two or more different topologies (e.g., star-bus or star-mesh).
-   - **Advantages**:
-     - Flexible and scalable to suit specific network requirements.
-     - Can leverage the benefits of individual topologies.
-   - **Disadvantages**:
-     - Complex to design and implement.
-     - Higher cost due to diverse hardware and configurations.
+20. **In the bus topology, what happens if one of the stations is unplugged?**
+
+    - Other devices remain connected unless the backbone is disturbed.
+
+21. **Draw a hybrid topology with a star backbone and three ring networks.**  
+    _(Diagram required: A star topology connecting three ring topologies as sub-networks.)_
+
+22. **Draw a hybrid topology with a ring backbone and two bus networks.**  
+    _(Diagram required: A ring topology as a backbone with two bus topologies branching out.)_
+
+23. **Performance is inversely related to delay. Which applications are more sensitive to delay?**  
+    a. **Sending an e-mail** → Less sensitive  
+    b. **Copying a file** → Less sensitive  
+    c. **Surfing the Internet** → More sensitive
+
+24. **When a party makes a local telephone call, is this a point-to-point or multipoint connection? Explain.**
+
+    - **Point-to-point**, as it connects two users directly.
+
+25. **Compare the telephone network and the Internet. What are the similarities and differences?**
+    - **Similarities:** Both use switching techniques.
+    - **Differences:** Telephone uses circuit switching; the Internet uses packet switching.
+
+---
