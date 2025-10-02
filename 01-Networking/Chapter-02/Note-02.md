@@ -164,3 +164,36 @@ At the **server side**, the process is reversed, and the **webpage is sent back*
 - The **OSI model** is useful for understanding **networking concepts**.
 - The **TCP/IP model** is the **real-world implementation** used on the Internet.
 - **TCP ensures reliability**, while **UDP prioritizes speed**.
+
+---
+
+### TCP Three-Way Handshake (Connection Establishment)
+
+**Purpose:** Establish a reliable TCP connection and synchronize sequence numbers between client and server.
+
+**Steps:**
+
+1. **SYN (Client → Server)**
+
+   - Client requests connection.
+   - Sets SYN flag, chooses initial sequence number (e.g., `seq=100`).
+
+2. **SYN-ACK (Server → Client)**
+
+   - Server acknowledges client’s SYN (`ack = client_seq + 1`).
+   - Sends its own SYN with server sequence number (e.g., `seq=500`).
+
+3. **ACK (Client → Server)**
+
+   - Client acknowledges server’s SYN (`ack = server_seq + 1`).
+   - Connection is now established; data transfer can begin.
+
+**Key Points:**
+
+- Ensures both sides agree on sequence numbers.
+- Prevents old or duplicate connections.
+- Enables reliable, ordered data transmission.
+
+**Analogy:** Phone call handshake: “Hello → Yes, ready → Got it, start talking.”
+
+---

@@ -138,3 +138,104 @@ The **OSI (Open Systems Interconnection) model** is a conceptual framework that 
 | **1. Physical**     | Transmission of raw bits            | Cables, Fiber, Wireless            |
 
 Each layer interacts with the layer directly above and below it, making the network communication process structured and efficient.
+
+## 1. What is a Protocol Data Unit (PDU)?
+
+Think of PDUs as **packets of data** at each layer of the network stack.
+
+- Each layer adds its own header (sometimes a footer) to the data it receives from the layer above.
+- That “package with extra info” is a PDU.
+
+In simple terms:
+
+> **PDU = Data + Layer-Specific Header (and sometimes trailer)**
+
+The header contains control info that the layer needs: addresses, sequence numbers, flags, etc.
+
+---
+
+### 2. PDU at Each OSI Layer
+
+1. **Application Layer (Layer 7)**
+
+   - PDU name: **Data**
+   - Content: actual message the user wants to send (email text, file, HTTP request).
+   - Example: `"GET /index.html HTTP/1.1"`
+
+2. **Presentation Layer (Layer 6)**
+
+   - PDU: **Data** (often still called Data)
+   - Content: formatted/encoded/encrypted version of the application data.
+   - Adds encoding, compression, or encryption headers (if needed).
+
+3. **Session Layer (Layer 5)**
+
+   - PDU: **Data**
+   - Content: session control info, e.g., checkpoints, session IDs.
+   - Example: in SSL/TLS handshake, session keys and state info are part of PDU.
+
+4. **Transport Layer (Layer 4)**
+
+   - PDU name: **Segment** (TCP) or **Datagram** (UDP)
+   - Content: Adds source and destination ports, sequence numbers, flags.
+   - Example (TCP segment):
+
+     ```
+     [TCP Header: SrcPort=5000, DestPort=80, Seq=1001] + [Data]
+     ```
+
+5. **Network Layer (Layer 3)**
+
+   - PDU name: **Packet**
+   - Content: Adds source and destination IP addresses, routing info.
+   - Example (IP packet):
+
+     ```
+     [IP Header: SrcIP=192.168.1.2, DestIP=8.8.8.8] + [Segment]
+     ```
+
+6. **Data Link Layer (Layer 2)**
+
+   - PDU name: **Frame**
+   - Content: Adds MAC addresses, error checking (CRC), and control info.
+   - Example (Ethernet frame):
+
+     ```
+     [Ethernet Header: SrcMAC, DestMAC] + [IP Packet] + [CRC]
+     ```
+
+7. **Physical Layer (Layer 1)**
+
+   - PDU name: **Bits**
+   - Content: Raw electrical, optical, or radio signals that represent the frame.
+   - No headers here — just 1s and 0s moving through the medium.
+
+---
+
+### 3. How Data Travels
+
+Think of **wrapping a gift** multiple times:
+
+- App layer: your gift (message).
+- Transport: wraps it in a box (segment).
+- Network: puts it in a shipping envelope (packet).
+- Data Link: adds a label and padding (frame).
+- Physical: sends the bits over wire/wireless.
+
+At the receiver: **unwrap layer by layer** until the original message is delivered to the application.
+
+---
+
+### Quick PDU Table
+
+| OSI Layer        | PDU              | Added Info / Header        |
+| ---------------- | ---------------- | -------------------------- |
+| Application (7)  | Data             | App-specific info          |
+| Presentation (6) | Data             | Encoding/compression info  |
+| Session (5)      | Data             | Session control info       |
+| Transport (4)    | Segment/Datagram | Port numbers, seq#, flags  |
+| Network (3)      | Packet           | IP addresses, routing info |
+| Data Link (2)    | Frame            | MAC addresses, CRC         |
+| Physical (1)     | Bits             | Electrical/optical signals |
+
+---
